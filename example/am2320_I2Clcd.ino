@@ -37,7 +37,9 @@ void loop() {
       Serial.print("humidity: ");
       Serial.print(th.h);
       Serial.print("%, temperature: ");
-      Serial.print(th.t);
+      Serial.print(th.t / 10);
+      Serial.print(".");
+      Serial.print(th.t % 10);
       Serial.println("*C");
       break;
   }
@@ -56,7 +58,7 @@ void loop() {
   switch (tab){
     case 0:
       if (ths == 0) {
-        sprintf(line0, "t=%2d", (int) th.t);
+        sprintf(line0, "t=%2d", (int) th.t/10);
         sprintf(line1, "h=%2d", (int) th.h);
       } else {
         sprintf(line0, "t=!!'C");
