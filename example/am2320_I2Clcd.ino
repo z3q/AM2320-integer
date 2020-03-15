@@ -5,7 +5,7 @@ LiquidCrystal_I2C lcd(63,16,2);  // Устанавливаем дисплей (A
 
 // датчик влажности и температуры AM2320
 #include <Wire.h>
-#include <AM2320.h>
+#include <AM2320-int.h>
 AM2320 th;
 
 // копка
