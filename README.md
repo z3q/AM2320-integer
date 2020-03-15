@@ -7,4 +7,4 @@ The difference is usage of integer math. Temperature is multiplied by 10 and can
     lcd.print(".");
     lcd.print(th.t % 10);
     
-Nobody cares about relative humidity percant fractions, so it is simply rounded.
+Nobody cares about relative humidity % fractions, so it is simply rounded.
