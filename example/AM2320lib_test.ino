@@ -1,5 +1,5 @@
 #include <Wire.h>
-#include <AM2320.h>
+#include <AM2320-int.h>
 AM2320 th;
 
 void setup() {
@@ -18,7 +18,9 @@ void loop() {
       Serial.print("humidity: ");
       Serial.print(th.h);
       Serial.print("%, temperature: ");
-      Serial.print(th.t);
+      Serial.print(th.t / 10);
+      Serial.print(".");
+      Serial.print(th.t % 10);
       Serial.println("*C");
       break;
   }
