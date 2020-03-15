@@ -9,9 +9,9 @@ class AM2320
 {
 	public:
 		AM2320();
-		float t;
-		float h;
-		int Read(void); 
+		int t;
+		byte h;
+		byte Read(void); 
 };
 
 #endif
