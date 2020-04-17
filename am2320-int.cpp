@@ -48,12 +48,11 @@ byte AM2320::Read()
   unsigned int Rcrc = buf[7] << 8;
   Rcrc += buf[6];
   if (Rcrc == CRC16(buf, 6)) {
-    unsigned int temperature = ((buf[4] & 0x7F) << 8) + buf[5];
-    t = temperature; // x10, don't forget to divide by 10!
+    t = ((buf[4] & 0x7F) << 8) + buf[5]; // x10, don't forget to divide by 10!
     t = ((buf[4] & 0x80) >> 7) == 1 ? t * (-1) : t;
 
     unsigned int humidity = (buf[2] << 8) + buf[3];
-    h = round(humidity / 10);
+    h = byte (humidity / 10);
     return 0;
   }
   return 2;
