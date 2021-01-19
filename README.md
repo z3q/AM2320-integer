@@ -5,6 +5,6 @@ The difference is usage of integer math. Temperature is multiplied by 10 and can
 
     lcd.print(th.t / 10);
     lcd.print(".");
-    lcd.print(th.t % 10);
+    lcd.print(abs(th.t) % 10);
     
-Nobody cares about relative humidity % fractions, so it is simply rounded.
+Nobody cares about relative humidity % fraction, so it is simply rounded (truncated).
