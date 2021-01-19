@@ -38,7 +38,7 @@ void loop() {
       Serial.print("%, temperature: ");
       Serial.print(th.t / 10);
       Serial.print(".");
-      Serial.print(th.t % 10);
+      Serial.print(abs(th.t) % 10);
       Serial.println("*C");
       break;
   }
